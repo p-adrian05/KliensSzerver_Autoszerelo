@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Text.RegularExpressions;
+using WorkRecorder_Client.Validation;
 
 namespace WorkRecorder_Client {
     public partial class CustomerWindow : Window {
@@ -22,7 +22,7 @@ namespace WorkRecorder_Client {
 
         public void CreateButtonClick(object sender, RoutedEventArgs e) {
             resetValidationLabales();
-            validateCustomer();
+            validateInput();
         }
         public void UpdateButtonClick(object sender, RoutedEventArgs e) {
 
@@ -31,13 +31,13 @@ namespace WorkRecorder_Client {
 
         }
 
-        private bool validateCustomer() {
+        private bool validateInput() {
             try {
-                validateFirstName(FirstNameTextBox.Text);
-                validateLastName(LastNameTextBox.Text);
-                validateBrandName(CarBrandTextBox.Text);
-                validateCarType(CarTypeTextBox.Text);
-                validateLicensePlateName(LicensePlateTextBox.Text);
+                CustomerValidation.validateFirstName(FirstNameTextBox.Text);
+                CustomerValidation.validateLastName(LastNameTextBox.Text);
+                CustomerValidation.validateBrandName(CarBrandTextBox.Text);
+                CustomerValidation.validateCarType(CarTypeTextBox.Text);
+                CustomerValidation.validateLicensePlateName(LicensePlateTextBox.Text);
                 return true;
             }catch(InvalidFirstNameException e) {
                 showErrorMessage(FirstNameErrLabel, e.Message);
@@ -53,46 +53,7 @@ namespace WorkRecorder_Client {
             return false;
         }
 
-        private bool validateFirstName(String name) {
-            if (string.IsNullOrWhiteSpace(name)) {
-                throw new InvalidFirstNameException("FirstName should not be empty.");
-            } else if(!Regex.IsMatch(name,@"^([A-Z][a-z]*)?(\s{0,1}[A-Z][a-z]*)$")){
-                throw new InvalidFirstNameException("Invalid first name");
-            }
-            return true;
-        }
-        private bool validateLastName(String name) {
-            if (string.IsNullOrWhiteSpace(name)) {
-                throw new InvalidLastNameException("Last Name should not be empty.");
-            } else if (!Regex.IsMatch(name, @"^[A-Z][a-z]*$")) {
-                throw new InvalidLastNameException("Invalid last name");
-            }
-            return true;
-        }
-        private bool validateBrandName(String brandName) {
-            if (string.IsNullOrWhiteSpace(brandName)) {
-                throw new InvalidBrandNameException("Brand name should not be empty.");
-            } else if (!Regex.IsMatch(brandName, @"^[A-Z][a-z]*$")) {
-                throw new InvalidBrandNameException("Invalid brand");
-            }
-            return true;
-        }
-        private bool validateLicensePlateName(String licensePlate) {
-            if (string.IsNullOrWhiteSpace(licensePlate)) {
-                throw new InvalidLicensePlateException("License plate should not be empty.");
-            } else if (!Regex.IsMatch(licensePlate, @"^[A-Z0-9]{6}$")) {
-                throw new InvalidLicensePlateException("Only capital letters and numbers and max 6 character. ");
-            }
-            return true;
-        }
-        private bool validateCarType(String carTypeName) {
-            if (string.IsNullOrWhiteSpace(carTypeName)) {
-                throw new InvalidCarTypeException("Car type should not be empty.");
-            } else if (!Regex.IsMatch(carTypeName, @"^(\w*(\s*))*$")) {
-                throw new InvalidCarTypeException("No special characters allowed");
-            }
-            return true;
-        }
+       
         private void resetValidationLabales() {
             FirstNameErrLabel.Content = "";
             LastNameErrLabel.Content = "";
