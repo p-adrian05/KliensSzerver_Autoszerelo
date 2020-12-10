@@ -22,12 +22,31 @@ namespace WorkRecorder_Client {
         }
 
         public void CreateButtonClick(object sender, RoutedEventArgs e) {
-
+            validateCustomer();
         }
         public void UpdateButtonClick(object sender, RoutedEventArgs e) {
 
         }
         public void DeleteButtonClick(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void validateCustomer() {
+
+            if (string.IsNullOrEmpty(FirstNameTextBox.Text)) {
+                showWarningMessage(FirstNameErrLabel, "First name should not be empty.");
+            }
+            if (string.IsNullOrEmpty(LastNameTextBox.Text)) {
+                showWarningMessage(LastNameErrLabel, "Last name should not be empty.");
+            }
+        }
+
+        private void showWarningMessage(Label label,String message) {
+            label.Content = "First name should not be empty.";
+            label.Foreground = Brushes.Red;
+        }
+
+        private void CarTypeTextBox_TextChanged(object sender, TextChangedEventArgs e) {
 
         }
     }
