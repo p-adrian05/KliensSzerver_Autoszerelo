@@ -22,6 +22,7 @@ namespace WorkRecorder_Client {
         }
 
         public void CreateButtonClick(object sender, RoutedEventArgs e) {
+            resetValidationLabales();
             validateCustomer();
         }
         public void UpdateButtonClick(object sender, RoutedEventArgs e) {
@@ -33,16 +34,32 @@ namespace WorkRecorder_Client {
 
         private void validateCustomer() {
 
-            if (string.IsNullOrEmpty(FirstNameTextBox.Text)) {
+            if (string.IsNullOrWhiteSpace(FirstNameTextBox.Text)) {
                 showWarningMessage(FirstNameErrLabel, "First name should not be empty.");
             }
-            if (string.IsNullOrEmpty(LastNameTextBox.Text)) {
+            if (string.IsNullOrWhiteSpace(LastNameTextBox.Text)) {
                 showWarningMessage(LastNameErrLabel, "Last name should not be empty.");
             }
+            if (string.IsNullOrWhiteSpace(CarBrandTextBox.Text)) {
+                showWarningMessage(CarBrandErrLabel, "Car brand should not be empty.");
+            }
+            if (string.IsNullOrWhiteSpace(CarTypeTextBox.Text)) {
+                showWarningMessage(CarTypeErrLabel, "Car type should not be empty.");
+            }
+            if (string.IsNullOrWhiteSpace(LicensePlateTextBox.Text)) {
+                showWarningMessage(LicensePlateErrLabel, "License plate should not be empty.");
+            }
+        }
+        private void resetValidationLabales() {
+            FirstNameErrLabel.Content = "";
+            LastNameErrLabel.Content = "";
+            CarBrandErrLabel.Content = "";
+            CarTypeErrLabel.Content = "";
+            LicensePlateErrLabel.Content = "";
         }
 
         private void showWarningMessage(Label label,String message) {
-            label.Content = "First name should not be empty.";
+            label.Content = message;
             label.Foreground = Brushes.Red;
         }
 
