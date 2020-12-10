@@ -16,6 +16,7 @@ namespace WorkRecorder_Client.Validation.Tests {
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("Name2 Name F"));
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("Name NameD"));
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("Name "));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("Name@ "));
         }
         [TestMethod()]
         public void validateFirstNameTestExpectedTrue() {
@@ -32,8 +33,13 @@ namespace WorkRecorder_Client.Validation.Tests {
             Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName("name Name"));
             Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName("Name "));
             Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName("NameD "));
+            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName("Name3 "));
+            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName("Name$ "));
         }
-
+        [TestMethod()]
+        public void validateLastNameTestExpectedTrue() {
+            Assert.IsTrue(CustomerValidation.validateLastName("Name"));
+        }
         [TestMethod()]
         public void validateBrandNameTest() {
             Assert.Fail();
