@@ -20,5 +20,15 @@ namespace WorkRecorder_Client {
         public CustomerWindow() {
             InitializeComponent();
         }
+
+        public void CreateButtonClick(object sender, RoutedEventArgs e) {
+
+        }
+        public void UpdateButtonClick(object sender, RoutedEventArgs e) {
+
+        }
+        public void DeleteButtonClick(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
