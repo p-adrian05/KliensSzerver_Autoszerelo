@@ -80,8 +80,14 @@ namespace WorkRecorder_Client {
             }
         }
         public void DeleteButtonClick(object sender, RoutedEventArgs e) {
+            if (MessageBox.Show("Do you really want to delete?", "Question", MessageBoxButton.YesNo) == MessageBoxResult.Yes) {
+               // WorkDataProvider.DeleteWork(_work.Id);
 
-        }
+                DialogResult = true;
+                Close();
+            }
+        
+         }
         
         private bool validateInput() {
             try {
