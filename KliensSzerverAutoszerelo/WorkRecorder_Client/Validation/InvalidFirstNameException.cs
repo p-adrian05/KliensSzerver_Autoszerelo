@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace WorkRecorder_Client {
-    class InvalidFirstNameException : Exception {
+    public class InvalidFirstNameException : Exception {
         public InvalidFirstNameException(string message) : base(message) {
         }
     }

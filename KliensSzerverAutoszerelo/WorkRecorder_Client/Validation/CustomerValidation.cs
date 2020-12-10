@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace WorkRecorder_Client.Validation {
-    class CustomerValidation {
+    public class CustomerValidation {
         public static bool validateFirstName(String name) {
             if (string.IsNullOrWhiteSpace(name)) {
                 throw new InvalidFirstNameException("FirstName should not be empty.");

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace WorkRecorder_Client {
-    class InvalidCarTypeException : Exception {
+    public class InvalidCarTypeException : Exception {
         public InvalidCarTypeException(string message) : base(message) {
         }
     }

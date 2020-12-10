@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace WorkRecorder_Client {
-    class InvalidLastNameException : Exception {
+    public class InvalidLastNameException : Exception {
         public InvalidLastNameException(string message) : base(message) {
         }
     }

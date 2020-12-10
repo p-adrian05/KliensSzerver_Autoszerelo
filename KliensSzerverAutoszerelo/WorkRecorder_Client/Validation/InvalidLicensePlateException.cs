@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace WorkRecorder_Client {
-    class InvalidLicensePlateException : Exception {
+    public class InvalidLicensePlateException : Exception {
         public InvalidLicensePlateException(string message) : base(message) {
         }
     }
