@@ -23,15 +23,15 @@ namespace WorkRecorder_Client {
             InitializeComponent();
             resetValidationLabales();
 
-            if(false) {
-                //_work = work;
+          /*  if(false) {
+                _work = work;
 
-                //FirstNameTextBox.Text = _work.FirstName;
-               // LastNameTextBox.Text = _work.LastName;
-               // CarBrandTextBox.Text = _work.CarBrand;
-               // CarTypeTextBox.Text = _work.CarType;
-              //  LicensePlateTextBox.Text = _work.LicensePlate;
-              //  DescriptionTextBox.Text = _work.Description;
+                FirstNameTextBox.Text = _work.FirstName;
+                LastNameTextBox.Text = _work.LastName;
+                CarBrandTextBox.Text = _work.CarBrand;
+                CarTypeTextBox.Text = _work.CarType;
+                LicensePlateTextBox.Text = _work.LicensePlate;
+                DescriptionTextBox.Text = _work.Description;
 
                 CreateButton.Visibility = Visibility.Collapsed;
                 UpdateButton.Visibility = Visibility.Visible;
@@ -43,15 +43,41 @@ namespace WorkRecorder_Client {
                 UpdateButton.Visibility = Visibility.Collapsed;
                 DeleteButton.Visibility = Visibility.Collapsed;
             }
-
+          */
         }
 
         public void CreateButtonClick(object sender, RoutedEventArgs e) {
             resetValidationLabales();
-            validateInput();
+            if (validateInput()) {
+                _work.FirstName = FirstNameTextBox.Text;
+                _work.LastName = LastNameTextBox.Text;
+                _work.CarBrand = CarBrandTextBox.Text;
+                _work.CarType = CarTypeTextBox.Text;
+                _work.LicensePlate = LicensePlateTextBox.Text;
+                _work.Description = DescriptionTextBox.Text;
+
+                //WorkDataProvider.CreateWOrk(_work);
+
+                DialogResult = true;
+                Close();
+            }
+            
         }
         public void UpdateButtonClick(object sender, RoutedEventArgs e) {
+            resetValidationLabales();
+            if (validateInput()) {
+                _work.FirstName = FirstNameTextBox.Text;
+                _work.LastName = LastNameTextBox.Text;
+                _work.CarBrand = CarBrandTextBox.Text;
+                _work.CarType = CarTypeTextBox.Text;
+                _work.LicensePlate = LicensePlateTextBox.Text;
+                _work.Description = DescriptionTextBox.Text;
 
+                //WorkDataProvider.UpdateWOrk(_work);
+
+                DialogResult = true;
+                Close();
+            }
         }
         public void DeleteButtonClick(object sender, RoutedEventArgs e) {
 
