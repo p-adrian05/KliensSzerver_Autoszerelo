@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace WorkRecorder_Client.Models {
     public class Work {
+
+        public int id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string CarBrand { get; set; }
         public string CarType { get; set; }
         public string LicensePlate { get; set; }
         public string Description { get; set; }
-        public string WorkState { get; set; }
+        public WorkState WorkState { get; set; }
 
+        public Work() {
+            this.WorkState = WorkState.Recorded;
+        }
     }
 }

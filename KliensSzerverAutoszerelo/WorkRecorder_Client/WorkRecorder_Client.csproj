@@ -70,11 +70,14 @@
     <Compile Include="CustomerWindow.xaml.cs">
       <DependentUpon>CustomerWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InvalidLicensePlateException.cs" />
-    <Compile Include="InvalidCarTypeException .cs" />
-    <Compile Include="InvalidBrandNameException .cs" />
-    <Compile Include="InvalidLastNameException.cs" />
-    <Compile Include="InvalidFirstNameException.cs" />
+    <Compile Include="Models\Work.cs" />
+    <Compile Include="Models\WorkState.cs" />
+    <Compile Include="Validation\CustomerValidation.cs" />
+    <Compile Include="Validation\InvalidLicensePlateException.cs" />
+    <Compile Include="Validation\InvalidCarTypeException .cs" />
+    <Compile Include="Validation\InvalidBrandNameException .cs" />
+    <Compile Include="Validation\InvalidLastNameException.cs" />
+    <Compile Include="Validation\InvalidFirstNameException.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

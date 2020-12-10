@@ -12,12 +12,38 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WorkRecorder_Client.Validation;
+using WorkRecorder_Client.Models;
 
 namespace WorkRecorder_Client {
     public partial class CustomerWindow : Window {
+
+        private readonly Work _work;
+
         public CustomerWindow() {
             InitializeComponent();
             resetValidationLabales();
+
+            if(false) {
+                //_work = work;
+
+                //FirstNameTextBox.Text = _work.FirstName;
+               // LastNameTextBox.Text = _work.LastName;
+               // CarBrandTextBox.Text = _work.CarBrand;
+               // CarTypeTextBox.Text = _work.CarType;
+              //  LicensePlateTextBox.Text = _work.LicensePlate;
+              //  DescriptionTextBox.Text = _work.Description;
+
+                CreateButton.Visibility = Visibility.Collapsed;
+                UpdateButton.Visibility = Visibility.Visible;
+                DeleteButton.Visibility = Visibility.Visible;
+            } else {
+                _work = new Work();
+
+                CreateButton.Visibility = Visibility.Visible;
+                UpdateButton.Visibility = Visibility.Collapsed;
+                DeleteButton.Visibility = Visibility.Collapsed;
+            }
+
         }
 
         public void CreateButtonClick(object sender, RoutedEventArgs e) {
@@ -30,7 +56,7 @@ namespace WorkRecorder_Client {
         public void DeleteButtonClick(object sender, RoutedEventArgs e) {
 
         }
-
+        
         private bool validateInput() {
             try {
                 CustomerValidation.validateFirstName(FirstNameTextBox.Text);
