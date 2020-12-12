@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkRecorder_Client", "Work
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkRecorder_ClientTests", "WorkRecorder_ClientTests\WorkRecorder_ClientTests.csproj", "{F1B2DA10-B77B-40C9-95AF-574D5998D9F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KliensSzerverAutoszerelo_Common", "KliensSzerberAutoszerelo_Common\KliensSzerverAutoszerelo_Common.csproj", "{74E0ACE2-3EF5-4F44-8685-F691712005C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KliensSzerverAutoszerelo_Common", "KliensSzerverAutoszerelo_Common\KliensSzerverAutoszerelo_Common.csproj", "{0B29EFC8-96C7-439E-98EA-790628854054}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{F1B2DA10-B77B-40C9-95AF-574D5998D9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1B2DA10-B77B-40C9-95AF-574D5998D9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1B2DA10-B77B-40C9-95AF-574D5998D9F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{74E0ACE2-3EF5-4F44-8685-F691712005C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74E0ACE2-3EF5-4F44-8685-F691712005C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74E0ACE2-3EF5-4F44-8685-F691712005C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74E0ACE2-3EF5-4F44-8685-F691712005C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B29EFC8-96C7-439E-98EA-790628854054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B29EFC8-96C7-439E-98EA-790628854054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B29EFC8-96C7-439E-98EA-790628854054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B29EFC8-96C7-439E-98EA-790628854054}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

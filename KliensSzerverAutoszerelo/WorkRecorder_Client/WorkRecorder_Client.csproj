@@ -108,8 +108,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KliensSzerberAutoszerelo_Common\KliensSzerverAutoszerelo_Common.csproj">
-      <Project>{74e0ace2-3ef5-4f44-8685-f691712005c3}</Project>
+    <ProjectReference Include="..\KliensSzerverAutoszerelo_Common\KliensSzerverAutoszerelo_Common.csproj">
+      <Project>{0b29efc8-96c7-439e-98ea-790628854054}</Project>
       <Name>KliensSzerverAutoszerelo_Common</Name>
     </ProjectReference>
   </ItemGroup>
