@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WorkRecorder_Client.Models;
 
 namespace WorkRecorder_Client {
     /// <summary>
@@ -24,11 +25,18 @@ namespace WorkRecorder_Client {
         private void AddWork_Click(object sender, RoutedEventArgs e) {
             var window = new CustomerWindow(null);
             if (window.ShowDialog() ?? false) {
-                //UpdatePeopleListBox();
+                
             }
         }
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            Work selectedWork = WorkListBox.SelectedItem as Work;
+            if(selectedWork != null) {
+                var window = new CustomerWindow(selectedWork);
+                if (window.ShowDialog() ?? false) {
 
+                }
+                WorkListBox.UnselectAll();
+            }
         }
     }
 }
