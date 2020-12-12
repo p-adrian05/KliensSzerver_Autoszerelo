@@ -19,11 +19,11 @@ namespace WorkRecorder_Client {
 
         private readonly Work _work;
 
-        public CustomerWindow() {
+        public CustomerWindow(Work work) {
             InitializeComponent();
             resetValidationLabales();
 
-          /*  if(false) {
+            if(work != null) {
                 _work = work;
 
                 FirstNameTextBox.Text = _work.FirstName;
@@ -43,7 +43,7 @@ namespace WorkRecorder_Client {
                 UpdateButton.Visibility = Visibility.Collapsed;
                 DeleteButton.Visibility = Visibility.Collapsed;
             }
-          */
+          
         }
 
         public void CreateButtonClick(object sender, RoutedEventArgs e) {

@@ -21,5 +21,14 @@ namespace WorkRecorder_Client {
         public MainWindow() {
             InitializeComponent();
         }
+        private void AddWork_Click(object sender, RoutedEventArgs e) {
+            var window = new CustomerWindow(null);
+            if (window.ShowDialog() ?? false) {
+                //UpdatePeopleListBox();
+            }
+        }
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+
+        }
     }
 }
