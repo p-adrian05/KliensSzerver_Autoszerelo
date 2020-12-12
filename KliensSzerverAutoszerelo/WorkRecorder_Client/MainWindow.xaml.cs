@@ -15,17 +15,17 @@ using System.Windows.Shapes;
 using WorkRecorder_Client.Models;
 
 namespace WorkRecorder_Client {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window {
+
+        private IList<Work> _works;
         public MainWindow() {
             InitializeComponent();
         }
         private void AddWork_Click(object sender, RoutedEventArgs e) {
             var window = new CustomerWindow(null);
             if (window.ShowDialog() ?? false) {
-                
+                UpdateWorkListBox();
             }
         }
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
@@ -33,10 +33,15 @@ namespace WorkRecorder_Client {
             if(selectedWork != null) {
                 var window = new CustomerWindow(selectedWork);
                 if (window.ShowDialog() ?? false) {
-
+                    UpdateWorkListBox();
                 }
                 WorkListBox.UnselectAll();
             }
+        }
+
+        private void UpdateWorkListBox() {
+            //_works = WorkDataProvider.GetWorks().ToList();
+            WorkListBox.ItemsSource = _works;
         }
     }
 }
