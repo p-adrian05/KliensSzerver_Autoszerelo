@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Works" FontWeight="Bold" Margin="15, 15, 15, 0"/>
+
+        <ListBox x:Name="WorkListBox" Grid.Row="1" Margin="15" SelectionChanged="ListBox_SelectionChanged" SelectionMode="Single"/>
+
+        <Button Grid.Row="2" Content="Add work" Width="100" HorizontalAlignment="Right" Margin="15, 0, 15, 15" Click="AddWork_Click"/>
     </Grid>
 </Window>
