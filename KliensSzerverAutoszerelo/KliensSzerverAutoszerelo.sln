@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkRecorder_Client", "WorkRecorder_Client\WorkRecorder_Client.csproj", "{1202DB9C-E559-438D-B538-C401E800194A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationTest", "ValidationTest\ValidationTest.csproj", "{3A0947DE-4792-48D5-877E-18129BC2C661}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkRecorder_ClientTests", "WorkRecorder_ClientTests\WorkRecorder_ClientTests.csproj", "{F1B2DA10-B77B-40C9-95AF-574D5998D9F9}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{1202DB9C-E559-438D-B538-C401E800194A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1202DB9C-E559-438D-B538-C401E800194A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1202DB9C-E559-438D-B538-C401E800194A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A0947DE-4792-48D5-877E-18129BC2C661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A0947DE-4792-48D5-877E-18129BC2C661}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A0947DE-4792-48D5-877E-18129BC2C661}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A0947DE-4792-48D5-877E-18129BC2C661}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F1B2DA10-B77B-40C9-95AF-574D5998D9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F1B2DA10-B77B-40C9-95AF-574D5998D9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1B2DA10-B77B-40C9-95AF-574D5998D9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU

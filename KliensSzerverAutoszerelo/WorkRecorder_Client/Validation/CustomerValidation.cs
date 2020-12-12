@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace WorkRecorder_Client.Validation {
     public class CustomerValidation {
-        public static bool validateFirstName(String name) {
+        public static bool ValidateFirstName(String name) {
             if (string.IsNullOrWhiteSpace(name)) {
                 throw new InvalidFirstNameException("FirstName should not be empty.");
             } else if (!Regex.IsMatch(name, @"^([A-Z][a-z]*)?(\s{0,1}[A-Z][a-z]*)$")) {
@@ -15,7 +15,7 @@ namespace WorkRecorder_Client.Validation {
             }
             return true;
         }
-        public static bool validateLastName(String name) {
+        public static bool ValidateLastName(String name) {
             if (string.IsNullOrWhiteSpace(name)) {
                 throw new InvalidLastNameException("Last Name should not be empty.");
             } else if (!Regex.IsMatch(name, @"^[A-Z][a-z]*$")) {
@@ -23,7 +23,7 @@ namespace WorkRecorder_Client.Validation {
             }
             return true;
         }
-        public static bool validateBrandName(String brandName) {
+        public static bool ValidateBrandName(String brandName) {
             if (string.IsNullOrWhiteSpace(brandName)) {
                 throw new InvalidBrandNameException("Brand name should not be empty.");
             } else if (!Regex.IsMatch(brandName, @"^[A-Z][a-z]*$")) {
@@ -31,7 +31,7 @@ namespace WorkRecorder_Client.Validation {
             }
             return true;
         }
-        public static bool validateLicensePlateName(String licensePlate) {
+        public static bool ValidateLicensePlateName(String licensePlate) {
             if (string.IsNullOrWhiteSpace(licensePlate)) {
                 throw new InvalidLicensePlateException("License plate should not be empty.");
             } else if (!Regex.IsMatch(licensePlate, @"^[A-Z0-9]{6}$")) {
@@ -39,7 +39,7 @@ namespace WorkRecorder_Client.Validation {
             }
             return true;
         }
-        public static bool validateCarType(String carTypeName) {
+        public static bool ValidateCarType(String carTypeName) {
             if (string.IsNullOrWhiteSpace(carTypeName)) {
                 throw new InvalidCarTypeException("Car type should not be empty.");
             } else if (!Regex.IsMatch(carTypeName, @"^(\w*(\s*))*$")) {

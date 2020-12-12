@@ -21,7 +21,7 @@ namespace WorkRecorder_Client {
 
         public CustomerWindow(Work work) {
             InitializeComponent();
-            resetValidationLabales();
+            ResetValidationLabales();
 
             if(work != null) {
                 _work = work;
@@ -47,8 +47,8 @@ namespace WorkRecorder_Client {
         }
 
         public void CreateButtonClick(object sender, RoutedEventArgs e) {
-            resetValidationLabales();
-            if (validateInput()) {
+            ResetValidationLabales();
+            if (ValidateInput()) {
                 _work.FirstName = FirstNameTextBox.Text;
                 _work.LastName = LastNameTextBox.Text;
                 _work.CarBrand = CarBrandTextBox.Text;
@@ -64,8 +64,8 @@ namespace WorkRecorder_Client {
             
         }
         public void UpdateButtonClick(object sender, RoutedEventArgs e) {
-            resetValidationLabales();
-            if (validateInput()) {
+            ResetValidationLabales();
+            if (ValidateInput()) {
                 _work.FirstName = FirstNameTextBox.Text;
                 _work.LastName = LastNameTextBox.Text;
                 _work.CarBrand = CarBrandTextBox.Text;
@@ -89,30 +89,30 @@ namespace WorkRecorder_Client {
         
          }
         
-        private bool validateInput() {
+        private bool ValidateInput() {
             try {
-                CustomerValidation.validateFirstName(FirstNameTextBox.Text);
-                CustomerValidation.validateLastName(LastNameTextBox.Text);
-                CustomerValidation.validateBrandName(CarBrandTextBox.Text);
-                CustomerValidation.validateCarType(CarTypeTextBox.Text);
-                CustomerValidation.validateLicensePlateName(LicensePlateTextBox.Text);
+                CustomerValidation.ValidateFirstName(FirstNameTextBox.Text);
+                CustomerValidation.ValidateLastName(LastNameTextBox.Text);
+                CustomerValidation.ValidateBrandName(CarBrandTextBox.Text);
+                CustomerValidation.ValidateCarType(CarTypeTextBox.Text);
+                CustomerValidation.ValidateLicensePlateName(LicensePlateTextBox.Text);
                 return true;
             }catch(InvalidFirstNameException e) {
-                showErrorMessage(FirstNameErrLabel, e.Message);
+                ShowErrorMessage(FirstNameErrLabel, e.Message);
             }catch(InvalidLastNameException e) {
-                showErrorMessage(LastNameErrLabel, e.Message);
+                ShowErrorMessage(LastNameErrLabel, e.Message);
             }catch(InvalidBrandNameException e) {
-                showErrorMessage(CarBrandErrLabel, e.Message);
+                ShowErrorMessage(CarBrandErrLabel, e.Message);
             }catch (InvalidCarTypeException e) {
-                showErrorMessage(CarTypeErrLabel, e.Message);
+                ShowErrorMessage(CarTypeErrLabel, e.Message);
             }catch (InvalidLicensePlateException e) {
-                showErrorMessage(LicensePlateErrLabel, e.Message);
+                ShowErrorMessage(LicensePlateErrLabel, e.Message);
             }
             return false;
         }
 
        
-        private void resetValidationLabales() {
+        private void ResetValidationLabales() {
             FirstNameErrLabel.Content = "";
             LastNameErrLabel.Content = "";
             CarBrandErrLabel.Content = "";
@@ -121,7 +121,7 @@ namespace WorkRecorder_Client {
             DescriptionErrLabel.Content = "";
         }
 
-        private void showErrorMessage(Label label,String message) {
+        private void ShowErrorMessage(Label label,String message) {
             label.Content = message;
             label.Foreground = Brushes.Red;
         }

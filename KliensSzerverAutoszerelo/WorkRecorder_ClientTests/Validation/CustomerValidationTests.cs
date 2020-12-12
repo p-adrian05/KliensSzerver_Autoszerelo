@@ -5,53 +5,53 @@ namespace WorkRecorder_Client.Validation.Tests {
     [TestClass()]
     public class CustomerValidationTests {
         [TestMethod()]
-        public void validateFirstNameTestThrowInvalidFirstNameException() {
-            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName(""));
-            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName(" "));
-            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("name"));
-            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("name Name"));
-            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("Name name"));
-            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("NamME Name"));
-            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("Name2 Name"));
-            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("Name2 Name F"));
-            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("Name NameD"));
-            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("Name "));
-            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.validateFirstName("Name@ "));
+        public void ValidateFirstNameTestThrowInvalidFirstNameException() {
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName(""));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName(" "));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("name"));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("name Name"));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name name"));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("NamME Name"));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name2 Name"));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name2 Name F"));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name NameD"));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name "));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name@ "));
         }
         [TestMethod()]
-        public void validateFirstNameTestExpectedTrue() {
-            Assert.IsTrue(CustomerValidation.validateFirstName("Name"));
-            Assert.IsTrue(CustomerValidation.validateFirstName("Name Name"));
-            Assert.IsTrue(CustomerValidation.validateFirstName("Name N"));
+        public void ValidateFirstNameTestExpectedTrue() {
+            Assert.IsTrue(CustomerValidation.ValidateFirstName("Name"));
+            Assert.IsTrue(CustomerValidation.ValidateFirstName("Name Name"));
+            Assert.IsTrue(CustomerValidation.ValidateFirstName("Name N"));
         }
 
         [TestMethod()]
-        public void validateLastNameTestThrowInvalidLastNameException() {
-            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName(""));
-            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName(" "));
-            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName("name"));
-            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName("name Name"));
-            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName("Name "));
-            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName("NameD "));
-            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName("Name3 "));
-            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.validateLastName("Name$ "));
+        public void ValidateLastNameTestThrowInvalidLastNameException() {
+            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName(""));
+            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName(" "));
+            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName("name"));
+            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName("name Name"));
+            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName("Name "));
+            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName("NameD "));
+            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName("Name3 "));
+            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName("Name$ "));
         }
         [TestMethod()]
-        public void validateLastNameTestExpectedTrue() {
-            Assert.IsTrue(CustomerValidation.validateLastName("Name"));
+        public void ValidateLastNameTestExpectedTrue() {
+            Assert.IsTrue(CustomerValidation.ValidateLastName("Name"));
         }
         [TestMethod()]
-        public void validateBrandNameTest() {
+        public void ValidateBrandNameTest() {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void validateLicensePlateNameTest() {
+        public void ValidateLicensePlateNameTest() {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void validateCarTypeTest() {
+        public void ValidateCarTypeTest() {
             Assert.Fail();
         }
     }
