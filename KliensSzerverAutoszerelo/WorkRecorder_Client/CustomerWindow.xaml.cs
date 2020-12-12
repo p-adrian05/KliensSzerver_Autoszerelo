@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WorkRecorder_Client.Validation;
-using WorkRecorder_Client.Models;
+using KliensSzerverAutoszerelo_Common.Models;
 
 namespace WorkRecorder_Client {
     public partial class CustomerWindow : Window {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorkRecorder_Client.Models {
+namespace KliensSzerverAutoszerelo_Common.Models{
     public class Work {
 
         public int id { get; set; }

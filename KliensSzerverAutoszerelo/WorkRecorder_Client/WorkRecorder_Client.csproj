@@ -70,8 +70,6 @@
     <Compile Include="CustomerWindow.xaml.cs">
       <DependentUpon>CustomerWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Work.cs" />
-    <Compile Include="Models\WorkState.cs" />
     <Compile Include="Validation\CustomerValidation.cs" />
     <Compile Include="Validation\InvalidLicensePlateException.cs" />
     <Compile Include="Validation\InvalidCarTypeException .cs" />
@@ -108,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KliensSzerberAutoszerelo_Common\KliensSzerverAutoszerelo_Common.csproj">
+      <Project>{74e0ace2-3ef5-4f44-8685-f691712005c3}</Project>
+      <Name>KliensSzerverAutoszerelo_Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
