@@ -7,7 +7,7 @@ using System.Linq;
 namespace Autoszerelo_Szerver.Controllers
 {
 
-    [Route("api/works")]
+    [Route("api/work")]
     [ApiController]
     public class CarMechanicController : ControllerBase
     {

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WorkRecorder_Client.Validation;
 using KliensSzerverAutoszerelo_Common.Models;
+using KliensSzerverAutoszerelo_Common.DataProviders;
 
 namespace WorkRecorder_Client {
     public partial class CustomerWindow : Window {
@@ -56,7 +57,7 @@ namespace WorkRecorder_Client {
                 _work.LicensePlate = LicensePlateTextBox.Text;
                 _work.Description = DescriptionTextBox.Text;
 
-                //WorkDataProvider.CreateWOrk(_work);
+                WorkDataProvider.CreateWork(_work);
 
                 DialogResult = true;
                 Close();

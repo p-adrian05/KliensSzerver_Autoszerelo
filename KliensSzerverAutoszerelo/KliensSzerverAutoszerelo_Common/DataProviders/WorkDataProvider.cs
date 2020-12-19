@@ -35,6 +35,7 @@ namespace KliensSzerverAutoszerelo_Common.DataProviders {
 
                 var response = client.PostAsync(URL, content).Result;
                 if (!response.IsSuccessStatusCode) {
+
                     throw new InvalidOperationException($"Failed to create work {response.StatusCode}");
                 }
             }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using KliensSzerverAutoszerelo_Common.DataProviders;
 using KliensSzerverAutoszerelo_Common.Models;
 
 namespace WorkRecorder_Client {
@@ -21,6 +22,8 @@ namespace WorkRecorder_Client {
         private IList<Work> _works;
         public MainWindow() {
             InitializeComponent();
+
+            UpdateWorkListBox();
         }
         private void AddWork_Click(object sender, RoutedEventArgs e) {
             var window = new CustomerWindow(null);
@@ -40,7 +43,7 @@ namespace WorkRecorder_Client {
         }
 
         private void UpdateWorkListBox() {
-            //_works = WorkDataProvider.GetWorks().ToList();
+            _works = (IList<Work>)WorkDataProvider.GetWorks();
             WorkListBox.ItemsSource = _works;
         }
     }

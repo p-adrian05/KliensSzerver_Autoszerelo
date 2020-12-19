@@ -19,5 +19,10 @@ namespace KliensSzerverAutoszerelo_Common.Models{
         public Work() {
             this.WorkState = WorkState.Recorded;
         }
+
+        public override string ToString()
+        {
+            return $"{CarBrand} {CarType} {LicensePlate}";
+        }
     }
 }
