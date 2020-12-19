@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkRecorder_ClientTests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KliensSzerverAutoszerelo_Common", "KliensSzerverAutoszerelo_Common\KliensSzerverAutoszerelo_Common.csproj", "{0B29EFC8-96C7-439E-98EA-790628854054}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autoszerelo_Server", "Autoszerelo_server\Autoszerelo_Server.csproj", "{CADA6DBD-0C4F-4F9E-A42C-484D384E5409}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autoszerelo_Szerver", "Autoszerelo_server\Autoszerelo_Szerver.csproj", "{CADA6DBD-0C4F-4F9E-A42C-484D384E5409}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace KliensSzerverAutoszerelo_Common.Models{
     public class Work {
 
-        public int id { get; set; }
+        public long Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string CarBrand { get; set; }
