@@ -29,6 +29,21 @@ namespace Autoszerelo_Szerver.Repositories
                 database.SaveChanges();
             }
         }
+        public static void UpdateWork(Work work) {
+            using (var database = new WorkContext()) {
+                database.Works.Update(work);
+
+                database.SaveChanges();
+            }
+        }
+
+        public static void DeleteWork(Work work) {
+            using (var database = new WorkContext()) {
+                database.Works.Remove(work);
+
+                database.SaveChanges();
+            }
+        }
 
     }
 }
