@@ -12,44 +12,23 @@ namespace Autoszerelo_Szerver.Repositories
     {
         public static IList<Work> GetWorks() 
         {
-            var appDataPath = GetAppDataPath();
-
-            if (File.Exists(appDataPath))
+            using (var database = new WorkContext())
             {
-                var rawContent = File.ReadAllText(appDataPath);
-                var works = JsonSerializer.Deserialize<IList<Work>>(rawContent);
+                var works = database.Works.ToList();
+
                 return works;
             }
-
-            return new List<Work>();
         }
 
-        public static void StoreWorks(IList<Work> works)
+        public static void AddWork(Work work)
         {
-            var appDataPath = GetAppDataPath();
-
-            var rawContent = JsonSerializer.Serialize(works);
-            File.WriteAllText(appDataPath, rawContent);
-        }
-
-        public static string GetAppDataPath()
-        {
-            var localAppFolder = GetLocalFolder();
-            var appDataPath = Path.Combine(localAppFolder,"WorkState.json");
-            return appDataPath;
-        }
-
-        public static string GetLocalFolder()
-        {
-            var localAppDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            var localAppFolder = Path.Combine(localAppDataFolder, "WebAPI_Server");
-
-            if (!Directory.Exists(localAppFolder))
+            using (var database = new WorkContext())
             {
-                Directory.CreateDirectory(localAppFolder);
-            }
+                database.Works.Add(work);
 
-            return localAppFolder;
+                database.SaveChanges();
+            }
         }
+
     }
 }

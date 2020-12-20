@@ -20,51 +20,17 @@ namespace Autoszerelo_Szerver.Controllers
             return Ok(works);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<Work> Get(long id)
-        {
-            var works = WorkRepository.GetWorks();
-            var work = works.FirstOrDefault(x => x.Id == id);
 
-            if (work != null)
-            {
-                return Ok(work);
-            }
-            else
-            {
-                return NotFound();
-            }
-            
-        }
 
         [HttpPost]
         public ActionResult Post(Work work)
         {
-            var works = WorkRepository.GetWorks();
-
-            var newId = GetNewId(works);
-            work.Id = newId;
-
-            works.Add(work);
-            WorkRepository.StoreWorks(works);
+            WorkRepository.AddWork(work);
 
             return Ok();
         }
 
 
-        private long GetNewId(IList<Work> works)
-        {
-            long id = 0;
-
-            foreach (var work in works)
-            {
-                if (id < work.Id)
-                {
-                    id = work.Id;
-                }
-            }
-
-            return id + 1;
-        }
+        
     }
 }
