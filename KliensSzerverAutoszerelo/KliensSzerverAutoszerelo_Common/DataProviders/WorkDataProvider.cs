@@ -35,14 +35,18 @@ namespace KliensSzerverAutoszerelo_Common.DataProviders {
         public static void CreateWork(Work work) {
 
             using(var client = new HttpClient()) {
+                try {
+                    var rawData = JsonConvert.SerializeObject(work);
+                    var content = new StringContent(rawData, Encoding.UTF8, "application/json");
 
-                var rawData = JsonConvert.SerializeObject(work);
-                var content = new StringContent(rawData, Encoding.UTF8, "application/json");
-
-                var response = client.PostAsync(URL, content).Result;
-                if (!response.IsSuccessStatusCode) {
-
-                    throw new InvalidOperationException($"Failed to create work {response.StatusCode}");
+                    var response = client.PostAsync(URL, content).Result;
+                    if (!response.IsSuccessStatusCode) {
+                        throw new InvalidOperationException($"Failed to create work {response.StatusCode}");
+                    }
+                } catch (AggregateException ex) {
+                    throw new InvalidOperationException("Server connection failed");
+                } catch (HttpRequestException ex) {
+                    throw new InvalidOperationException("Server connection failed");
                 }
             }
         }

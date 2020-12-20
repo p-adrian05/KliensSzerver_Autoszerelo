@@ -57,13 +57,16 @@ namespace WorkRecorder_Client {
                 _work.LicensePlate = LicensePlateTextBox.Text;
                 _work.Description = DescriptionTextBox.Text;
 
-                //WorkDataProvider.CreateWork(_work);
-
-                DialogResult = true;
-                Close();
+                try {
+                    WorkDataProvider.CreateWork(_work);
+                    DialogResult = true;
+                    Close();
+                } catch (InvalidOperationException ex) {
+                    ShowErrorMessage(ErrorLabel, ex.Message);
+                }
             }
-
         }
+    
         public void UpdateButtonClick(object sender, RoutedEventArgs e) {
             ResetValidationLabales();
             if (ValidateInput()) {
@@ -120,6 +123,7 @@ namespace WorkRecorder_Client {
             CarTypeErrLabel.Content = "";
             LicensePlateErrLabel.Content = "";
             DescriptionErrLabel.Content = "";
+            ErrorLabel.Content = "";
         }
 
         private void ResetLabelContent(Label label) {
