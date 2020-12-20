@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarMechanic_Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1150">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -14,7 +14,29 @@
 
         <Label Grid.Row="0" Content="Works" Margin="15" FontWeight="Bold"/>
 
-        <ListView Grid.Row="1" x:Name="WorksListBox" Margin="15 0 15 15" SelectionChanged="WorksListBox_SelectionChanged" SelectionMode="Single"/>
-
+        <ListView x:Name="WorkListView" Grid.Row="1"
+          SelectionMode="Single"
+          ItemsSource="{Binding}" SelectionChanged="ListBox_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="140" Header="First Name"
+         DisplayMemberBinding="{Binding FirstName}"  />
+                    <GridViewColumn Width="140" Header="Last Name"  
+         DisplayMemberBinding="{Binding LastName}" />
+                    <GridViewColumn Width="140" Header="Car brand"
+         DisplayMemberBinding="{Binding CarBrand}" />
+                    <GridViewColumn Width="140" Header="Car type"
+         DisplayMemberBinding="{Binding CarType}" />
+                    <GridViewColumn Width="140" Header="License Plate"
+         DisplayMemberBinding="{Binding LicensePlate}" />
+                    <GridViewColumn Width="140" Header="Description"
+         DisplayMemberBinding="{Binding Description}" />
+                    <GridViewColumn Width="140" Header="State"
+         DisplayMemberBinding="{Binding WorkState}" />
+                    <GridViewColumn Width="140" Header="Time"
+         DisplayMemberBinding="{Binding RecordedTime}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

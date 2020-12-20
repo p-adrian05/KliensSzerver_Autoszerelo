@@ -50,5 +50,32 @@ namespace KliensSzerverAutoszerelo_Common.DataProviders {
                 }
             }
         }
+
+        public static void UpdateWork(Work work)
+        {
+
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var rawData = JsonConvert.SerializeObject(work);
+                    var content = new StringContent(rawData, Encoding.UTF8, "application/json");
+
+                    var response = client.PutAsync(URL+"/"+work.Id, content).Result;
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        throw new InvalidOperationException($"Failed to update work {response.StatusCode}");
+                    }
+                }
+                catch (AggregateException ex)
+                {
+                    throw new InvalidOperationException("Server connection failed");
+                }
+                catch (HttpRequestException ex)
+                {
+                    throw new InvalidOperationException("Server connection failed");
+                }
+            }
+        }
     }
 }

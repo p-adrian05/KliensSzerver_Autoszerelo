@@ -2,6 +2,7 @@
 using KliensSzerverAutoszerelo_Common.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace CarMechanic_Client
     /// </summary>
     public partial class MainWindow : Window
     {
-        private IList<Work> _works;
+        private ObservableCollection<Work> _works;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,16 +31,30 @@ namespace CarMechanic_Client
             UpdateWorks();
         }
 
-        private void WorksListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void UpdateWorks()
         {
-            _works = WorkDataProvider.GetWorks().ToList();
-            WorksListBox.ItemsSource = _works;
             
+            _works = new ObservableCollection<Work>(WorkDataProvider.GetWorks());
+            
+            
+            WorkListView.ItemsSource = _works;
+
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Work selectedWork = WorkListView.SelectedItem as Work;
+            if (selectedWork != null)
+            {
+                var window = new UpdateWorkStateWindow(selectedWork);
+                if (window.ShowDialog() ?? false)
+                {
+                    UpdateWorks();
+                }
+                WorkListView.UnselectAll();
+            }
+
         }
     }
 }
