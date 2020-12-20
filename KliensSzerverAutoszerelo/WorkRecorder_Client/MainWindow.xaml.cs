@@ -3,6 +3,8 @@ using System.Windows;
 using System.Windows.Controls;
 using KliensSzerverAutoszerelo_Common.DataProviders;
 using KliensSzerverAutoszerelo_Common.Models;
+using System;
+using System.Windows.Media;
 
 namespace WorkRecorder_Client
 {
@@ -12,7 +14,7 @@ namespace WorkRecorder_Client
         private IList<Work> _works;
         public MainWindow() {
             InitializeComponent();
-
+            ErrorLabel.Content = "";
             UpdateWorkListBox();
         }
         private void AddWork_Click(object sender, RoutedEventArgs e) {
@@ -33,8 +35,17 @@ namespace WorkRecorder_Client
         }
 
         private void UpdateWorkListBox() {
-            //_works = (IList<Work>)WorkDataProvider.GetWorks();
+            try {
+                _works = (IList<Work>)WorkDataProvider.GetWorks();
+            }catch(InvalidOperationException ex) {
+                ShowErrorMessage(ErrorLabel, ex.Message);
+            }
             WorkListBox.ItemsSource = _works;
+        }
+
+        private void ShowErrorMessage(Label label, String message) {
+            label.Content = message;
+            label.Foreground = Brushes.Red;
         }
     }
 }

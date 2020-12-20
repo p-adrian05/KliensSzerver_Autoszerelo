@@ -13,16 +13,22 @@ namespace KliensSzerverAutoszerelo_Common.DataProviders {
         public static IEnumerable<Work> GetWorks() {
 
             using (var client = new HttpClient()) {
+                try {
+                    var response = client.GetAsync(URL).Result;
 
-                var response = client.GetAsync(URL).Result;
+                    if (response.IsSuccessStatusCode) {
 
-                if (response.IsSuccessStatusCode) {
-
-                    var rawData = response.Content.ReadAsStringAsync().Result;
-                    IEnumerable<Work> works = JsonConvert.DeserializeObject<IEnumerable<Work>>(rawData);
-                    return works;
+                        var rawData = response.Content.ReadAsStringAsync().Result;
+                        IEnumerable<Work> works = JsonConvert.DeserializeObject<IEnumerable<Work>>(rawData);
+                        return works;
+                    }
+                    throw new InvalidOperationException($"Failed to read works {response.StatusCode}");
                 }
-                throw new InvalidOperationException($"Failed to read works {response.StatusCode}");
+                catch(AggregateException ex) {
+                    throw new InvalidOperationException("Server connection failed");
+                }catch(HttpRequestException ex) {
+                    throw new InvalidOperationException("Server connection failed");
+                }
             }
         }
 
