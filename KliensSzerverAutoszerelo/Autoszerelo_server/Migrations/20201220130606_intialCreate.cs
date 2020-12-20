@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Autoszerelo_Szerver.Migrations
 {
-    public partial class initialCreate : Migration
+    public partial class intialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,7 +19,8 @@ namespace Autoszerelo_Szerver.Migrations
                     CarType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     LicensePlate = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WorkState = table.Column<int>(type: "int", nullable: false)
+                    WorkState = table.Column<int>(type: "int", nullable: false),
+                    RecordedTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
