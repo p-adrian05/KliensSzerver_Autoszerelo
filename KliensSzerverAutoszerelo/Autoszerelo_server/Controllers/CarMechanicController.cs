@@ -37,6 +37,17 @@ namespace Autoszerelo_Szerver.Controllers
             }
             return NotFound();
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteWork(long id) {
+            Work work = WorkRepository.GetWork(id);
+
+            if (work != null) {
+                WorkRepository.DeleteWork(work);
+                return Ok();
+            }
+            return NotFound();
+        }
  
     }
 }
