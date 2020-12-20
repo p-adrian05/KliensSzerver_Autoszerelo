@@ -26,7 +26,7 @@ namespace Autoszerelo_Szerver.Repositories
             {
                 database.Works.Add(work);
 
-                database.SaveChanges();
+                database.SaveChanges();   
             }
         }
         public static void UpdateWork(Work work) {
@@ -44,6 +44,12 @@ namespace Autoszerelo_Szerver.Repositories
                 database.SaveChanges();
             }
         }
+        public static Work GetWork(long id) {
+            using (var database = new WorkContext()) {
+                Work work = database.Works.Where(work => work.Id == id).FirstOrDefault();
 
+                return work;
+            }
+        }
     }
 }

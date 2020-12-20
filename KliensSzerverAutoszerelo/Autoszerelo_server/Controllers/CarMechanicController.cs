@@ -1,6 +1,7 @@
 ﻿using Autoszerelo_Szerver.Repositories;
 using KliensSzerverAutoszerelo_Common.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,7 +13,6 @@ namespace Autoszerelo_Szerver.Controllers
     public class CarMechanicController : ControllerBase
     {
        
-
         [HttpGet]
         public ActionResult<IEnumerable<Work>> Get()
         {
@@ -20,17 +20,23 @@ namespace Autoszerelo_Szerver.Controllers
             return Ok(works);
         }
 
-
-
         [HttpPost]
-        public ActionResult Post(Work work)
+        public ActionResult CreateWork(Work work)
         {
             WorkRepository.AddWork(work);
-
+            
             return Ok();
         }
 
+        public ActionResult<Work> UpdateWork(Work work,long id) {
+            Work dbWork = WorkRepository.GetWork(id);
 
-        
+            if(dbWork != null) {
+                WorkRepository.UpdateWork(work);
+                return Ok();
+            }
+            return NotFound();
+        }
+ 
     }
 }
