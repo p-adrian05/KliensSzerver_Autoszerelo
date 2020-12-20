@@ -14,7 +14,7 @@ namespace Autoszerelo_Szerver.Repositories
         {
             using (var database = new WorkContext())
             {
-                return database.Works.ToList();
+                return database.Works.OrderByDescending(w => w.RecordedTime).ToList();
             }
         }
 
