@@ -27,6 +27,7 @@ namespace Autoszerelo_Szerver.Controllers
             
             return Ok();
         }
+
         [HttpPut("{id}")]
         public ActionResult<Work> UpdateWork(Work work,long id) {
             Work dbWork = WorkRepository.GetWork(id);

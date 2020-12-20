@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Autoszerelo_Szerver.Migrations
 {
     [DbContext(typeof(WorkContext))]
-    [Migration("20201220130606_intialCreate")]
-    partial class intialCreate
+    [Migration("20201220132417_initialCreate")]
+    partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
