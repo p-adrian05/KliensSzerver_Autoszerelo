@@ -17,12 +17,16 @@ namespace WorkRecorder_Client.Validation.Tests {
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name NameD"));
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name "));
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name@ "));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Namenamenamenmanamenamenamenmaa"));
+          
         }
         [TestMethod()]
         public void ValidateFirstNameTestExpectedTrue() {
             Assert.IsTrue(CustomerValidation.ValidateFirstName("Name"));
             Assert.IsTrue(CustomerValidation.ValidateFirstName("Name Name"));
             Assert.IsTrue(CustomerValidation.ValidateFirstName("Name N"));
+            Assert.IsTrue(CustomerValidation.ValidateFirstName("NamenamenamenmaNamenamenamenma"));
+            Assert.IsTrue(CustomerValidation.ValidateFirstName("NamenamenamenmaNamenamenamenm"));
         }
 
         [TestMethod()]
@@ -35,10 +39,13 @@ namespace WorkRecorder_Client.Validation.Tests {
             Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName("NameD "));
             Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName("Name3 "));
             Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName("Name$ "));
+            Assert.ThrowsException<InvalidLastNameException>(() => CustomerValidation.ValidateLastName("Namenamenamenmanamenamenamenmaa"));
         }
         [TestMethod()]
         public void ValidateLastNameTestExpectedTrue() {
             Assert.IsTrue(CustomerValidation.ValidateLastName("Name"));
+            Assert.IsTrue(CustomerValidation.ValidateLastName("Namenamenamenmanamenamenamenma"));
+            Assert.IsTrue(CustomerValidation.ValidateLastName("Namenamenamenmanamenamenamenm"));
         }
         [TestMethod()]
         public void ValidateBrandNameTest() {
