@@ -14,9 +14,7 @@ namespace Autoszerelo_Szerver.Repositories
         {
             using (var database = new WorkContext())
             {
-                var works = database.Works.ToList();
-
-                return works;
+                return database.Works.ToList();
             }
         }
 
@@ -46,9 +44,8 @@ namespace Autoszerelo_Szerver.Repositories
         }
         public static Work GetWork(long id) {
             using (var database = new WorkContext()) {
-                Work work = database.Works.Where(work => work.Id == id).FirstOrDefault();
-
-                return work;
+                return database.Works.Where(work => work.Id == id)
+                    .FirstOrDefault();
             }
         }
     }
