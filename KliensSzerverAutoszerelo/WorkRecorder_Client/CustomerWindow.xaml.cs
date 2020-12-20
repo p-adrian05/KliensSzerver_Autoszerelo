@@ -56,6 +56,7 @@ namespace WorkRecorder_Client {
                 _work.CarType = CarTypeTextBox.Text;
                 _work.LicensePlate = LicensePlateTextBox.Text;
                 _work.Description = DescriptionTextBox.Text;
+                _work.RecordedTime = DateTime.Now;
 
                 try {
                     WorkDataProvider.CreateWork(_work);

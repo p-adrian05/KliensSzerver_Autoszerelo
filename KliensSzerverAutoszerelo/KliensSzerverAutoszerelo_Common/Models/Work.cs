@@ -28,6 +28,8 @@ namespace KliensSzerverAutoszerelo_Common.Models{
         public string Description { get; set; }
         [Required]
         public WorkState WorkState { get; set; }
+        [Required]
+        public DateTime RecordedTime { get; set; }
 
         public Work() {
             this.WorkState = WorkState.Recorded;
@@ -35,7 +37,7 @@ namespace KliensSzerverAutoszerelo_Common.Models{
 
         public override string ToString()
         {
-            return $"{CarBrand} {CarType} {LicensePlate}";
+            return $"Name: {FirstName} {LastName},Car: {CarBrand} {CarType}, License plate:  {LicensePlate}, Description: {Description}, State: {WorkState}, Recorded time: {RecordedTime}";
         }
     }
 }
