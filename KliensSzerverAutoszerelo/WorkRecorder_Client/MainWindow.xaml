@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkRecorder_Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Works" Height="642" Width="1145">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -15,7 +15,31 @@
         </Grid.RowDefinitions>
         <Label  x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Margin="183,10,0,0" Grid.Row="0" VerticalAlignment="Top" Width="402"/>
         <Label Grid.Row="0" Content="Works" FontWeight="Bold" Margin="15, 15, 15, 0"/>
-        <ListBox x:Name="WorkListBox" Grid.Row="1" Margin="15" SelectionChanged="ListBox_SelectionChanged" SelectionMode="Single"/>
+        <ListView x:Name="WorkListView" Grid.Row="1"
+          SelectionMode="Single"
+          ItemsSource="{Binding}" SelectionChanged="ListBox_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="140" Header="First Name"
+         DisplayMemberBinding="{Binding FirstName}"  />
+                    <GridViewColumn Width="140" Header="Last Name"  
+         DisplayMemberBinding="{Binding LastName}" />
+                <GridViewColumn Width="140" Header="Car brand"
+         DisplayMemberBinding="{Binding CarBrand}" />
+                    <GridViewColumn Width="140" Header="Car type"
+         DisplayMemberBinding="{Binding CarType}" />
+                    <GridViewColumn Width="140" Header="License Plate"
+         DisplayMemberBinding="{Binding LicensePlate}" />
+                    <GridViewColumn Width="140" Header="Description"
+         DisplayMemberBinding="{Binding Description}" />
+                    <GridViewColumn Width="140" Header="State"
+         DisplayMemberBinding="{Binding WorkState}" />
+                    <GridViewColumn Width="140" Header="Time"
+         DisplayMemberBinding="{Binding RecordedTime}" />
+            </GridView>
+            </ListView.View>
+        </ListView>
+
         <Button Grid.Row="2" Content="Add work" Width="100" HorizontalAlignment="Right" Margin="15, 0, 15, 15" Click="AddWork_Click"/>
 
     </Grid>
