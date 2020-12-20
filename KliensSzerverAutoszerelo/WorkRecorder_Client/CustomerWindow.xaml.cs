@@ -77,18 +77,25 @@ namespace WorkRecorder_Client {
                 _work.LicensePlate = LicensePlateTextBox.Text;
                 _work.Description = DescriptionTextBox.Text;
 
-                //WorkDataProvider.UpdateWOrk(_work);
-
-                DialogResult = true;
-                Close();
+                try {
+                    //WorkDataProvider.UpdateWOrk(_work);
+                    DialogResult = true;
+                    Close();
+                } catch (InvalidOperationException ex) {
+                    ShowErrorMessage(ErrorLabel, ex.Message);
+                }
             }
         }
         public void DeleteButtonClick(object sender, RoutedEventArgs e) {
             if (MessageBox.Show("Do you really want to delete?", "Question", MessageBoxButton.YesNo) == MessageBoxResult.Yes) {
-                // WorkDataProvider.DeleteWork(_work.Id);
 
-                DialogResult = true;
-                Close();
+                try {
+                    // WorkDataProvider.DeleteWork(_work.Id);
+                    DialogResult = true;
+                    Close();
+                } catch (InvalidOperationException ex) {
+                    ShowErrorMessage(ErrorLabel, ex.Message);
+                }
             }
 
         }
