@@ -33,7 +33,7 @@ namespace WorkRecorder_Client
         }
 
         private void UpdateWorkListBox() {
-            _works = (IList<Work>)WorkDataProvider.GetWorks();
+            //_works = (IList<Work>)WorkDataProvider.GetWorks();
             WorkListBox.ItemsSource = _works;
         }
     }

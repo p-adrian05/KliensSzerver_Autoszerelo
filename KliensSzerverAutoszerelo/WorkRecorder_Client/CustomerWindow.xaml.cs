@@ -24,7 +24,7 @@ namespace WorkRecorder_Client {
             InitializeComponent();
             ResetValidationLabales();
 
-            if(work != null) {
+            if (work != null) {
                 _work = work;
 
                 FirstNameTextBox.Text = _work.FirstName;
@@ -44,7 +44,7 @@ namespace WorkRecorder_Client {
                 UpdateButton.Visibility = Visibility.Collapsed;
                 DeleteButton.Visibility = Visibility.Collapsed;
             }
-          
+
         }
 
         public void CreateButtonClick(object sender, RoutedEventArgs e) {
@@ -57,12 +57,12 @@ namespace WorkRecorder_Client {
                 _work.LicensePlate = LicensePlateTextBox.Text;
                 _work.Description = DescriptionTextBox.Text;
 
-                WorkDataProvider.CreateWork(_work);
+                //WorkDataProvider.CreateWork(_work);
 
                 DialogResult = true;
                 Close();
             }
-            
+
         }
         public void UpdateButtonClick(object sender, RoutedEventArgs e) {
             ResetValidationLabales();
@@ -82,14 +82,14 @@ namespace WorkRecorder_Client {
         }
         public void DeleteButtonClick(object sender, RoutedEventArgs e) {
             if (MessageBox.Show("Do you really want to delete?", "Question", MessageBoxButton.YesNo) == MessageBoxResult.Yes) {
-               // WorkDataProvider.DeleteWork(_work.Id);
+                // WorkDataProvider.DeleteWork(_work.Id);
 
                 DialogResult = true;
                 Close();
             }
-        
-         }
-        
+
+        }
+
         private bool ValidateInput() {
             try {
                 CustomerValidation.ValidateFirstName(FirstNameTextBox.Text);
@@ -98,21 +98,21 @@ namespace WorkRecorder_Client {
                 CustomerValidation.ValidateCarType(CarTypeTextBox.Text);
                 CustomerValidation.ValidateLicensePlateName(LicensePlateTextBox.Text);
                 return true;
-            }catch(InvalidFirstNameException e) {
+            } catch (InvalidFirstNameException e) {
                 ShowErrorMessage(FirstNameErrLabel, e.Message);
-            }catch(InvalidLastNameException e) {
+            } catch (InvalidLastNameException e) {
                 ShowErrorMessage(LastNameErrLabel, e.Message);
-            }catch(InvalidBrandNameException e) {
+            } catch (InvalidBrandNameException e) {
                 ShowErrorMessage(CarBrandErrLabel, e.Message);
-            }catch (InvalidCarTypeException e) {
+            } catch (InvalidCarTypeException e) {
                 ShowErrorMessage(CarTypeErrLabel, e.Message);
-            }catch (InvalidLicensePlateException e) {
+            } catch (InvalidLicensePlateException e) {
                 ShowErrorMessage(LicensePlateErrLabel, e.Message);
             }
             return false;
         }
 
-       
+
         private void ResetValidationLabales() {
             FirstNameErrLabel.Content = "";
             LastNameErrLabel.Content = "";
@@ -122,13 +122,60 @@ namespace WorkRecorder_Client {
             DescriptionErrLabel.Content = "";
         }
 
-        private void ShowErrorMessage(Label label,String message) {
+        private void ResetLabelContent(Label label) {
+            label.Content = "";
+        }
+
+        private void ShowErrorMessage(Label label, String message) {
             label.Content = message;
             label.Foreground = Brushes.Red;
         }
 
+        private void FirstNameTextBox_TextChanged(object sender, TextChangedEventArgs e) {
+            TextBox textBox = sender as TextBox;
+            try {
+                CustomerValidation.ValidateFirstName(textBox.Text);
+                ResetLabelContent(FirstNameErrLabel);
+            } catch (InvalidFirstNameException ex) {
+                ShowErrorMessage(FirstNameErrLabel, ex.Message);
+            }
+        }
+        private void LastNameTextBox_TextChanged(object sender, TextChangedEventArgs e) {
+            TextBox textBox = sender as TextBox;
+            try {
+                CustomerValidation.ValidateLastName(textBox.Text);
+                ResetLabelContent(LastNameErrLabel);
+            } catch (InvalidLastNameException ex) {
+                ShowErrorMessage(LastNameErrLabel, ex.Message);
+            }
+        }
+        
+        private void CarBrandNameTextBox_TextChanged(object sender, TextChangedEventArgs e) {
+            TextBox textBox = sender as TextBox;
+            try {
+                CustomerValidation.ValidateBrandName(textBox.Text);
+                ResetLabelContent(CarBrandErrLabel);
+            } catch (InvalidBrandNameException ex) {
+                ShowErrorMessage(CarBrandErrLabel, ex.Message);
+            }
+        }
         private void CarTypeTextBox_TextChanged(object sender, TextChangedEventArgs e) {
-
+            TextBox textBox = sender as TextBox;
+            try {
+                CustomerValidation.ValidateCarType(textBox.Text);
+                ResetLabelContent(CarTypeErrLabel);
+            } catch (InvalidCarTypeException ex) {
+                ShowErrorMessage(CarTypeErrLabel, ex.Message);
+            }
+        }
+        private void LicensePlateTextBox_TextChanged(object sender, TextChangedEventArgs e) {
+            TextBox textBox = sender as TextBox;
+            try {
+                CustomerValidation.ValidateLicensePlateName(textBox.Text);
+                ResetLabelContent(LicensePlateErrLabel);
+            } catch (InvalidLicensePlateException ex) {
+                ShowErrorMessage(LicensePlateErrLabel, ex.Message);
+            }
         }
     }
 }
