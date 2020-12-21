@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkRecorder_Client"
         mc:Ignorable="d"
-        Title="Customer data" Height="575.13" Width="460.271">
+        Title="Customer data" Height="575.13" Width="490.271">
     <Grid Margin="0,0,0,2">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -45,12 +45,12 @@
             <TextBox x:Name="CarTypeTextBox" Grid.Column="1" Grid.Row="3" Margin="10,35,10,9" TextChanged="CarTypeTextBox_TextChanged"/>
 
             <Label Grid.Column="0" Grid.Row="4" Content="License plate" Margin="10"/>
-            <Label x:Name="LicensePlateErrLabel" Content="Label" Grid.Row="4" Grid.Column="1" FontSize="11" Margin="10,10,10,29"/>
+            <Label x:Name="LicensePlateErrLabel" Content="Label" Grid.Row="4" Grid.Column="1" FontSize="11" Margin="10,10,10,34"/>
             <TextBox x:Name="LicensePlateTextBox" Grid.Column="1" Grid.Row="4" Margin="10,35,10,10" TextChanged="LicensePlateTextBox_TextChanged"/>
 
             <Label Grid.Column="0" Grid.Row="5" Content="Description" Margin="10,6,10,34"/>
             <Label x:Name="DescriptionErrLabel" Content="Label" Grid.Row="5" Grid.Column="1" FontSize="11" Margin="10,6,10,98"/>
-            <TextBox x:Name="DescriptionTextBox" Grid.Column="1" Grid.Row="5" Margin="10,31,10,34"/>
+            <TextBox x:Name="DescriptionTextBox" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="5" Margin="10,31,10,34"/>
         </Grid>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top" Height="40" Margin="10,454,10,0">
