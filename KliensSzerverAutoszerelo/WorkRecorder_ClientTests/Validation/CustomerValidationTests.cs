@@ -48,18 +48,78 @@ namespace WorkRecorder_Client.Validation.Tests {
             Assert.IsTrue(CustomerValidation.ValidateLastName("Namenamenamenmanamenamenamenm"));
         }
         [TestMethod()]
-        public void ValidateBrandNameTest() {
-            Assert.Fail();
+        public void ValidateBrandNameTestExpectedTrue() {
+            Assert.IsTrue(CustomerValidation.ValidateBrandName("Toyota"));
+            Assert.IsTrue(CustomerValidation.ValidateBrandName("Ford"));
+            Assert.IsTrue(CustomerValidation.ValidateBrandName("Mercedes"));
+            Assert.IsTrue(CustomerValidation.ValidateBrandName("Ferrari"));
+            Assert.IsTrue(CustomerValidation.ValidateBrandName("Testname"));
+            Assert.IsTrue(CustomerValidation.ValidateBrandName("Test"));
+        }
+
+
+        [TestMethod()]
+        public void ValidateBrandNameTestThrowInvalidBrandNameException()
+        {
+            Assert.ThrowsException<InvalidBrandNameException>(() => CustomerValidation.ValidateBrandName(""));
+            Assert.ThrowsException<InvalidBrandNameException>(() => CustomerValidation.ValidateBrandName(" "));
+            Assert.ThrowsException<InvalidBrandNameException>(() => CustomerValidation.ValidateBrandName("bran d "));
+            Assert.ThrowsException<InvalidBrandNameException>(() => CustomerValidation.ValidateBrandName("brand Name "));
+            Assert.ThrowsException<InvalidBrandNameException>(() => CustomerValidation.ValidateBrandName("Branda   "));
+            Assert.ThrowsException<InvalidBrandNameException>(() => CustomerValidation.ValidateBrandName("Brand Name D "));
+            Assert.ThrowsException<InvalidBrandNameException>(() => CustomerValidation.ValidateBrandName("Name3** "));
+            Assert.ThrowsException<InvalidBrandNameException>(() => CustomerValidation.ValidateBrandName("//Name$ "));
+            Assert.ThrowsException<InvalidBrandNameException>(() => CustomerValidation.ValidateBrandName("Namesdgvsdfgsdfghenmsadasdasdasd"));
         }
 
         [TestMethod()]
-        public void ValidateLicensePlateNameTest() {
-            Assert.Fail();
+        public void ValidateLicensePlateNameTestExpectedTrue() {
+            Assert.IsTrue(CustomerValidation.ValidateLicensePlateName("WWW111"));
+            Assert.IsTrue(CustomerValidation.ValidateLicensePlateName("KLK231"));
+            Assert.IsTrue(CustomerValidation.ValidateLicensePlateName("QWE231"));
+            Assert.IsTrue(CustomerValidation.ValidateLicensePlateName("FRD231"));
+            Assert.IsTrue(CustomerValidation.ValidateLicensePlateName("SDD123"));
+            Assert.IsTrue(CustomerValidation.ValidateLicensePlateName("SDW123"));
+            Assert.IsTrue(CustomerValidation.ValidateLicensePlateName("SDC431"));
         }
 
         [TestMethod()]
-        public void ValidateCarTypeTest() {
-            Assert.Fail();
+        public void ValidateLicensePlateNameTestThrowInvalidLicensePlateException()
+        {
+            Assert.ThrowsException<InvalidLicensePlateException>(() => CustomerValidation.ValidateLicensePlateName(""));
+            Assert.ThrowsException<InvalidLicensePlateException>(() => CustomerValidation.ValidateLicensePlateName(" "));
+            Assert.ThrowsException<InvalidLicensePlateException>(() => CustomerValidation.ValidateLicensePlateName("SDD1111"));
+            Assert.ThrowsException<InvalidLicensePlateException>(() => CustomerValidation.ValidateLicensePlateName("1111AAA"));
+            Assert.ThrowsException<InvalidLicensePlateException>(() => CustomerValidation.ValidateLicensePlateName("SDAD111"));
+            Assert.ThrowsException<InvalidLicensePlateException>(() => CustomerValidation.ValidateLicensePlateName("SSA1132"));
+            Assert.ThrowsException<InvalidLicensePlateException>(() => CustomerValidation.ValidateLicensePlateName("11111"));
+            Assert.ThrowsException<InvalidLicensePlateException>(() => CustomerValidation.ValidateLicensePlateName("SSSSS"));
+            Assert.ThrowsException<InvalidLicensePlateException>(() => CustomerValidation.ValidateLicensePlateName("SD11AS11"));
+        }
+
+        [TestMethod()]
+        public void ValidateCarTypeTestExpectedTrue() {
+            Assert.IsTrue(CustomerValidation.ValidateCarType("Fiesta"));
+            Assert.IsTrue(CustomerValidation.ValidateCarType("Mondeo"));
+            Assert.IsTrue(CustomerValidation.ValidateCarType("Falcon"));
+            Assert.IsTrue(CustomerValidation.ValidateCarType("Mustang"));
+            Assert.IsTrue(CustomerValidation.ValidateCarType("EcoSport"));
+            Assert.IsTrue(CustomerValidation.ValidateCarType("Escape"));
+            Assert.IsTrue(CustomerValidation.ValidateCarType("Everest"));
+        }
+
+        [TestMethod()]
+        public void ValidateCarTypeTestInvalidCarTypeException()
+        {
+            Assert.ThrowsException<InvalidCarTypeException>(() => CustomerValidation.ValidateCarType(""));
+            Assert.ThrowsException<InvalidCarTypeException>(() => CustomerValidation.ValidateCarType(" "));
+            Assert.ThrowsException<InvalidCarTypeException>(() => CustomerValidation.ValidateCarType("SDD1111%"));
+            Assert.ThrowsException<InvalidCarTypeException>(() => CustomerValidation.ValidateCarType("111A--AA"));
+            Assert.ThrowsException<InvalidCarTypeException>(() => CustomerValidation.ValidateCarType("SDA!!D111"));
+            Assert.ThrowsException<InvalidCarTypeException>(() => CustomerValidation.ValidateCarType(" SS                         A32 "));
+            Assert.ThrowsException<InvalidCarTypeException>(() => CustomerValidation.ValidateCarType(" Ty..pe 2 "));
+            Assert.ThrowsException<InvalidCarTypeException>(() => CustomerValidation.ValidateCarType("Bog 4*8 48"));
+            Assert.ThrowsException<InvalidCarTypeException>(() => CustomerValidation.ValidateCarType("_wse_()we_we"));
         }
     }
 }
