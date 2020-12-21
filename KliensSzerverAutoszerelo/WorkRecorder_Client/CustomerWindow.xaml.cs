@@ -79,7 +79,7 @@ namespace WorkRecorder_Client {
                 _work.Description = DescriptionTextBox.Text;
 
                 try {
-                    //WorkDataProvider.UpdateWOrk(_work);
+                    WorkDataProvider.UpdateWork(_work);
                     DialogResult = true;
                     Close();
                 } catch (InvalidOperationException ex) {
@@ -91,7 +91,7 @@ namespace WorkRecorder_Client {
             if (MessageBox.Show("Do you really want to delete?", "Question", MessageBoxButton.YesNo) == MessageBoxResult.Yes) {
 
                 try {
-                    // WorkDataProvider.DeleteWork(_work.Id);
+                    WorkDataProvider.DeleteWork(_work.Id);
                     DialogResult = true;
                     Close();
                 } catch (InvalidOperationException ex) {
