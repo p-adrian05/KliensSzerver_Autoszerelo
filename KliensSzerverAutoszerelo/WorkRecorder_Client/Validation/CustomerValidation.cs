@@ -18,7 +18,7 @@ namespace WorkRecorder_Client.Validation {
             }else if (name.Length > firstNameLength) {
                 throw new InvalidFirstNameException($"FirstName length is max {firstNameLength} characters");
             }
-            else if (!Regex.IsMatch(name, @"^([A-Z][a-z]*)?(\s{0,1}[A-Z][a-z]*)$")) {
+            else if (!Regex.IsMatch(name, @"^([A-Z][a-z]*(\s[A-Z][a-z]*)?)$")) {
                 throw new InvalidFirstNameException("Invalid first name");
             }
             return true;

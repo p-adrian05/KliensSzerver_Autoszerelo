@@ -11,6 +11,8 @@ namespace WorkRecorder_Client.Validation.Tests {
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("name"));
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("name Name"));
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name name"));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("NaMe"));
+            Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("NaMe Na"));
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("NamME Name"));
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name2 Name"));
             Assert.ThrowsException<InvalidFirstNameException>(() => CustomerValidation.ValidateFirstName("Name2 Name F"));
@@ -25,8 +27,8 @@ namespace WorkRecorder_Client.Validation.Tests {
             Assert.IsTrue(CustomerValidation.ValidateFirstName("Name"));
             Assert.IsTrue(CustomerValidation.ValidateFirstName("Name Name"));
             Assert.IsTrue(CustomerValidation.ValidateFirstName("Name N"));
-            Assert.IsTrue(CustomerValidation.ValidateFirstName("NamenamenamenmaNamenamenamenma"));
-            Assert.IsTrue(CustomerValidation.ValidateFirstName("NamenamenamenmaNamenamenamenm"));
+            Assert.IsTrue(CustomerValidation.ValidateFirstName("Namenamenamenmanamenamenamenma"));
+            Assert.IsTrue(CustomerValidation.ValidateFirstName("Namenamenamenmanamenamenamen"));
         }
 
         [TestMethod()]
