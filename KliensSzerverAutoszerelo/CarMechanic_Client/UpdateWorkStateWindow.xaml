@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarMechanic_Client"
         mc:Ignorable="d"
-        Title="UpdateWorkStateWindow" Height="560" Width="460.271">
-    <Grid>
+        Title="UpdateWorkStateWindow" Height="608.619" Width="460.271">
+    <Grid Margin="0,0,0,18">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Grid.RowSpan="2" Margin="0,0,0,81">
+        <Grid Grid.Row="0" Grid.RowSpan="2" Margin="0,0,0,57">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="149"/>
                 <ColumnDefinition/>
@@ -23,8 +23,8 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" MinHeight="64" />
-                <RowDefinition Height="auto" MinHeight="129" />
+                <RowDefinition Height="auto" MinHeight="65" />
+                <RowDefinition Height="auto" MinHeight="128" />
 
             </Grid.RowDefinitions>
 
@@ -45,8 +45,8 @@
             <Label x:Name="LicensePlateLabel" Content="Label" Grid.Row="4" Grid.Column="1" FontSize="11" Margin="10,10,10,29"/>
 
             <Label Grid.Column="0" Grid.Row="5" Content="Description:" Margin="10"/>
-            <Label x:Name="DescriptionLabel" Content="Label" Grid.Row="5" Grid.Column="1" FontSize="11" Margin="10,10,10,29"/>
-            
+            <TextBlock x:Name="DescriptionLabel" TextWrapping="Wrap" Grid.Row="5" Grid.Column="1" FontSize="11" Margin="10,10,10,0" Height="45" VerticalAlignment="Top"/>
+
             <Label Grid.Column="0" Grid.Row="6" Content="Work state:" Margin="10,10,10,92"/>
             <ComboBox x:Name="WorkStateComboBox" Grid.Column="1" Grid.Row="6" Margin="10,10,0,92"  HorizontalAlignment="Left"  Width="110" SelectionChanged="WorkStateComboBox_SelectionChanged">
                 <ComboBoxItem Content="Recorded"></ComboBoxItem>

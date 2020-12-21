@@ -36,7 +36,7 @@ namespace CarMechanic_Client
                 CarBrandLabel.Content = _work.CarBrand;
                 CarTypeLabel.Content = _work.CarType;
                 LicensePlateLabel.Content = _work.LicensePlate;
-                DescriptionLabel.Content = _work.Description;
+                DescriptionLabel.Text = _work.Description;
                 WorkStateComboBox.SelectedIndex = (int)_work.WorkState;
 
             }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarMechanic_Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1150">
+        Title="MainWindow" Height="615.792" Width="1386.598">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -29,8 +29,13 @@
          DisplayMemberBinding="{Binding CarType}" />
                     <GridViewColumn Width="140" Header="License Plate"
          DisplayMemberBinding="{Binding LicensePlate}" />
-                    <GridViewColumn Width="140" Header="Description"
-         DisplayMemberBinding="{Binding Description}" />
+                    <GridViewColumn Header="Description" Width="385">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding Description}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn Width="140" Header="State"
          DisplayMemberBinding="{Binding WorkState}" />
                     <GridViewColumn Width="140" Header="Time"
