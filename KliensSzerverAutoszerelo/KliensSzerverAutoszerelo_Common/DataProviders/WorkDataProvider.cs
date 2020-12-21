@@ -77,5 +77,22 @@ namespace KliensSzerverAutoszerelo_Common.DataProviders {
                 }
             }
         }
+
+        public static void DeleteWork(long id) {
+
+            using(var client = new HttpClient()) {
+
+                try {
+                    var response = client.DeleteAsync($"{URL}/{id}").Result;
+                    if (!response.IsSuccessStatusCode) {
+                        throw new InvalidOperationException($"Failed to delete work {response.StatusCode}");
+                    }
+                } catch (AggregateException ex) {
+                    throw new InvalidOperationException("Server connection failed");
+                } catch (HttpRequestException ex) {
+                    throw new InvalidOperationException("Server connection failed");
+                }
+            }
+        }
     }
 }
