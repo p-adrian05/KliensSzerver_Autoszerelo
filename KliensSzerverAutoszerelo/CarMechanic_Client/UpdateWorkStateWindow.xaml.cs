@@ -21,7 +21,7 @@ namespace CarMechanic_Client
     /// </summary>
     public partial class UpdateWorkStateWindow : Window
     {
-        private  Work _work;
+        private  readonly Work _work;
 
         public UpdateWorkStateWindow(Work work)
         {
