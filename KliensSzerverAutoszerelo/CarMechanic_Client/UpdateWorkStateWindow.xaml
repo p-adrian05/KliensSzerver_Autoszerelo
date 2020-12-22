@@ -30,23 +30,23 @@
             </Grid.RowDefinitions>
 
             <Label FontWeight="Bold" Background = "LightGray" Grid.Column="0" Grid.Row="0" Content="First name:" Margin="10,10,10,32"/>
-            <Label Background = "LightGray" x:Name="FirstNameLabel" Content="Label" Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
+            <Label Background="AliceBlue" x:Name="FirstNameLabel" Content="Label" Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
 
 
             <Label FontWeight="Bold" Background = "LightGray" Grid.Column="0" Grid.Row="1" Content="Last name:" Margin="10,10,10,32"/>
-            <Label Background = "LightGray" x:Name="LastNameLabel" Content="Label" Grid.Row="1" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
+            <Label Background="AliceBlue" x:Name="LastNameLabel" Content="Label" Grid.Row="1" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
 
             <Label FontWeight="Bold" Background = "LightGray" Grid.Column="0" Grid.Row="2" Content="Car brand:" Margin="10,10,10,32"/>
-            <Label Background = "LightGray" x:Name="CarBrandLabel" Content="Label" Grid.Row="2" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
+            <Label Background="AliceBlue" x:Name="CarBrandLabel" Content="Label" Grid.Row="2" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
 
             <Label FontWeight="Bold" Background = "LightGray" Grid.Column="0" Grid.Row="3" Content="Car type:" Margin="10,10,10,32"/>
-            <Label Background = "LightGray" x:Name="CarTypeLabel" Content="Label" Grid.Row="3" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
+            <Label Background="AliceBlue" x:Name="CarTypeLabel" Content="Label" Grid.Row="3" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
 
             <Label FontWeight="Bold" Background = "LightGray" Grid.Column="0" Grid.Row="4" Content="License plate:" Margin="10,10,10,28"/>
-            <Label Background = "LightGray" x:Name="LicensePlateLabel" Content="Label" Grid.Row="4" Grid.Column="1" FontSize="11" Margin="10,11,10,28" RenderTransformOrigin="0.51,1.08"/>
+            <Label Background="AliceBlue" x:Name="LicensePlateLabel" Content="Label" Grid.Row="4" Grid.Column="1" FontSize="11" Margin="10,11,10,28" RenderTransformOrigin="0.51,1.08"/>
 
             <Label FontWeight="Bold" Background = "LightGray" Grid.Column="0" Grid.Row="5" Content="Description:" Margin="10,10,10,34"/>
-            <TextBlock Background = "LightGray" x:Name="DescriptionLabel" TextWrapping="Wrap" Grid.Row="5" Grid.Column="1" FontSize="11" Margin="10,10,10,0" Height="50" VerticalAlignment="Top" RenderTransformOrigin="0.505,0.433"/>
+            <TextBlock Background="AliceBlue" x:Name="DescriptionLabel" TextWrapping="Wrap" Grid.Row="5" Grid.Column="1" FontSize="11" Margin="10,10,10,0" Height="50" VerticalAlignment="Top" RenderTransformOrigin="0.505,0.433"/>
 
             <Label FontWeight="Bold" Background = "LightGray" Grid.Column="0" Grid.Row="6" Content="Work state:" Margin="10,10,10,103"/>
             <ComboBox x:Name="WorkStateComboBox" Grid.Column="1" Grid.Row="6" Margin="10,10,0,103"  HorizontalAlignment="Left"  Width="110" SelectionChanged="WorkStateComboBox_SelectionChanged">
