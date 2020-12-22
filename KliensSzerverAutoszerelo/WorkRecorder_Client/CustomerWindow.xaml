@@ -58,6 +58,6 @@
             <Button x:Name="UpdateButton" Content="Update" Width="80" Margin="10" Click="UpdateButtonClick"/>
             <Button x:Name="DeleteButton" Content="Delete" Width="80" Margin="10" Click="DeleteButtonClick"/>
         </StackPanel>
-        <Label x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Margin="66,499,0,0" Grid.Row="6" VerticalAlignment="Top" Width="336"/>
+        <Label x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Margin="78,468,0,0" Grid.Row="1" VerticalAlignment="Top" Width="336"/>
     </Grid>
 </Window>
