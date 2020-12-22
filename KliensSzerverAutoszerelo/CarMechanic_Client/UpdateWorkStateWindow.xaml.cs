@@ -21,7 +21,7 @@ namespace CarMechanic_Client
     /// </summary>
     public partial class UpdateWorkStateWindow : Window
     {
-        private readonly Work _work;
+        private  Work _work;
 
         public UpdateWorkStateWindow(Work work)
         {
@@ -46,22 +46,31 @@ namespace CarMechanic_Client
 
         private void UpdateButtonClick(object sender, RoutedEventArgs e)
         {
-
-                _work.WorkState = (WorkState) WorkStateComboBox.SelectedIndex;
-
+            try
+            {
+                _work.WorkState = (WorkState)WorkStateComboBox.SelectedIndex;
 
                 WorkDataProvider.UpdateWork(_work);
                 DialogResult = true;
                 Close();
-                
+            }
+            catch (InvalidOperationException ex)
+            {
+                ShowErrorMessage(ErrorLabel, ex.Message);
+            }
 
-            
         }
 
         private void WorkStateComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _work.WorkState = (WorkState) WorkStateComboBox.SelectedIndex;
 
+        }
+
+        private void ShowErrorMessage(Label label, String message)
+        {
+            label.Content = message;
+            label.Foreground = Brushes.Red;
         }
     }
 }

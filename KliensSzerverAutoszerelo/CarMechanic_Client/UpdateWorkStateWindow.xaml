@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarMechanic_Client"
         mc:Ignorable="d"
-        Title="UpdateWorkStateWindow" Height="608.619" Width="460.271">
+        Title="UpdateWorkStateWindow" Height="608.619" Width="375.271">
+
     <Grid Margin="0,0,0,18">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -28,27 +29,27 @@
 
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="0" Content="First name:" Margin="10,10,10,9"/>
-            <Label x:Name="FirstNameLabel" Content="Label" Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,10,10,33"/>
+            <Label Grid.Column="0" Grid.Row="0" Content="First name:" Margin="10,10,10,32"/>
+            <Label x:Name="FirstNameLabel" Content="Label" Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
 
 
-            <Label Grid.Column="0" Grid.Row="1" Content="Last name:" Margin="10,10,10,9"/>
-            <Label x:Name="LastNameLabel" Content="Label" Grid.Row="1" Grid.Column="1" FontSize="11" Margin="10,10,10,33"/>
+            <Label Grid.Column="0" Grid.Row="1" Content="Last name:" Margin="10,10,10,32"/>
+            <Label x:Name="LastNameLabel" Content="Label" Grid.Row="1" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
 
-            <Label Grid.Column="0" Grid.Row="2" Content="Car brand:" Margin="10"/>
-            <Label x:Name="CarBrandLabel" Content="Label" Grid.Row="2" Grid.Column="1" FontSize="11" Margin="10,10,10,33"/>
+            <Label Grid.Column="0" Grid.Row="2" Content="Car brand:" Margin="10,10,10,32"/>
+            <Label x:Name="CarBrandLabel" Content="Label" Grid.Row="2" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
 
-            <Label Grid.Column="0" Grid.Row="3" Content="Car type:" Margin="10,10,10,9"/>
-            <Label x:Name="CarTypeLabel" Content="Label" Grid.Row="3" Grid.Column="1" FontSize="11" Margin="10,10,10,33"/>
+            <Label Grid.Column="0" Grid.Row="3" Content="Car type:" Margin="10,10,10,32"/>
+            <Label x:Name="CarTypeLabel" Content="Label" Grid.Row="3" Grid.Column="1" FontSize="11" Margin="10,11,10,32"/>
 
-            <Label Grid.Column="0" Grid.Row="4" Content="License plate:" Margin="10"/>
-            <Label x:Name="LicensePlateLabel" Content="Label" Grid.Row="4" Grid.Column="1" FontSize="11" Margin="10,10,10,29"/>
+            <Label Grid.Column="0" Grid.Row="4" Content="License plate:" Margin="10,10,10,28"/>
+            <Label x:Name="LicensePlateLabel" Content="Label" Grid.Row="4" Grid.Column="1" FontSize="11" Margin="10,11,10,28" RenderTransformOrigin="0.51,1.08"/>
 
-            <Label Grid.Column="0" Grid.Row="5" Content="Description:" Margin="10"/>
-            <TextBlock x:Name="DescriptionLabel" TextWrapping="Wrap" Grid.Row="5" Grid.Column="1" FontSize="11" Margin="10,10,10,0" Height="45" VerticalAlignment="Top"/>
+            <Label Grid.Column="0" Grid.Row="5" Content="Description:" Margin="10,10,10,34"/>
+            <TextBlock x:Name="DescriptionLabel" TextWrapping="Wrap" Grid.Row="5" Grid.Column="1" FontSize="11" Margin="10,10,10,0" Height="26" VerticalAlignment="Top" RenderTransformOrigin="0.505,0.433"/>
 
-            <Label Grid.Column="0" Grid.Row="6" Content="Work state:" Margin="10,10,10,92"/>
-            <ComboBox x:Name="WorkStateComboBox" Grid.Column="1" Grid.Row="6" Margin="10,10,0,92"  HorizontalAlignment="Left"  Width="110" SelectionChanged="WorkStateComboBox_SelectionChanged">
+            <Label Grid.Column="0" Grid.Row="6" Content="Work state:" Margin="10,10,10,103"/>
+            <ComboBox x:Name="WorkStateComboBox" Grid.Column="1" Grid.Row="6" Margin="10,10,0,103"  HorizontalAlignment="Left"  Width="110" SelectionChanged="WorkStateComboBox_SelectionChanged">
                 <ComboBoxItem Content="Recorded"></ComboBoxItem>
                 <ComboBoxItem Content="InProgress"></ComboBoxItem>
                 <ComboBoxItem Content="Finished"></ComboBoxItem>
@@ -57,6 +58,7 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top" Height="40" Margin="10,468,10,0">
             <Button x:Name="UpdateButton" Content="Update" Width="80" Margin="10" Click="UpdateButtonClick"/>
+            <Label  x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="305"  Height="30"/>
         </StackPanel>
 
     </Grid>

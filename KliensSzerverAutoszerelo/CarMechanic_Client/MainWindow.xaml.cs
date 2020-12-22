@@ -23,7 +23,7 @@ namespace CarMechanic_Client
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Work> _works;
+        private Collection<Work> _works;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,12 +34,14 @@ namespace CarMechanic_Client
 
         private void UpdateWorks()
         {
-            
-            _works = new ObservableCollection<Work>(WorkDataProvider.GetWorks());
-            
-            
-            WorkListView.ItemsSource = _works;
+            try{
+                _works = new ObservableCollection<Work>(WorkDataProvider.GetWorks());
 
+                WorkListView.ItemsSource = _works;
+            }
+            catch (InvalidOperationException e){
+                ShowErrorMessage(ErrorLabel, e.Message);
+            }
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -55,6 +57,12 @@ namespace CarMechanic_Client
                 WorkListView.UnselectAll();
             }
 
+        }
+
+        private void ShowErrorMessage(Label label, String message)
+        {
+            label.Content = message;
+            label.Foreground = Brushes.Red;
         }
     }
 }

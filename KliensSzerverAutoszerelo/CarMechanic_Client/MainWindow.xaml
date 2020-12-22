@@ -12,6 +12,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <Label  x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Margin="183,10,0,0" Grid.Row="0" VerticalAlignment="Top" Width="402"/>
         <Label Grid.Row="0" Content="Works" Margin="15" FontWeight="Bold"/>
 
         <ListView x:Name="WorkListView" Grid.Row="1"
