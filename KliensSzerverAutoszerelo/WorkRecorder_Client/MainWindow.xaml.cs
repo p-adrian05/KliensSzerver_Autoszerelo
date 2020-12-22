@@ -12,7 +12,7 @@ namespace WorkRecorder_Client
 
     public partial class MainWindow : Window {
 
-        private ObservableCollection<Work> _works;
+        private Collection<Work> _works;
         public MainWindow() {
             
             InitializeComponent();
