@@ -12,7 +12,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Grid.RowSpan="2" Margin="0,0,0,64">
+        <Grid Grid.Row="0" Grid.RowSpan="2" Margin="0,0,0,53">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="*"/>
@@ -23,37 +23,37 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" MinHeight="64" />
+                <RowDefinition Height="auto" MinHeight="129" />
                 <RowDefinition Height="auto" MinHeight="129" />
 
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="0" Content="First name" Margin="10,10,10,9"/>
+            <Label Background="LightGray" FontWeight="Bold" Grid.Column="0" Grid.Row="0" Content="First name:" Margin="10,35,10,9"/>
             <Label x:Name="FirstNameErrLabel" Content="Label" Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,10,10,33"/>
-            <TextBox x:Name="FirstNameTextBox" Grid.Column="1" Grid.Row="0" Margin="10,35,10,9" TextChanged="FirstNameTextBox_TextChanged"/>
+            <TextBox Background="AliceBlue" x:Name="FirstNameTextBox" Grid.Column="1" Grid.Row="0" Margin="10,35,10,9" TextChanged="FirstNameTextBox_TextChanged"/>
 
-            <Label Grid.Column="0" Grid.Row="1" Content="Last name" Margin="10,10,10,9"/>
+            <Label Background="LightGray" FontWeight="Bold" Grid.Column="0" Grid.Row="1" Content="Last name:" Margin="10,35,10,9"/>
             <Label x:Name="LastNameErrLabel" Content="Label" Grid.Row="1" Grid.Column="1" FontSize="11" Margin="10,10,10,33"/>
-            <TextBox x:Name="LastNameTextBox" Grid.Column="1" Grid.Row="1" Margin="10,35,10,10" TextChanged="LastNameTextBox_TextChanged"/>
+            <TextBox Background="AliceBlue" x:Name="LastNameTextBox" Grid.Column="1" Grid.Row="1" Margin="10,35,10,10" TextChanged="LastNameTextBox_TextChanged"/>
 
-            <Label Grid.Column="0" Grid.Row="2" Content="Car brand" Margin="10"/>
+            <Label Background="LightGray" FontWeight="Bold" Grid.Column="0" Grid.Row="2" Content="Car brand:" Margin="10,35,10,10"/>
             <Label x:Name="CarBrandErrLabel" Content="Label" Grid.Row="2" Grid.Column="1" FontSize="11" Margin="10,10,10,33"/>
-            <TextBox x:Name="CarBrandTextBox" Grid.Column="1" Grid.Row="2" Margin="10,35,10,10" TextChanged="CarBrandNameTextBox_TextChanged"/>
+            <TextBox Background="AliceBlue" x:Name="CarBrandTextBox" Grid.Column="1" Grid.Row="2" Margin="10,35,10,10" TextChanged="CarBrandNameTextBox_TextChanged"/>
 
-            <Label Grid.Column="0" Grid.Row="3" Content="Car type" Margin="10,10,10,9"/>
+            <Label Background="LightGray" FontWeight="Bold" Grid.Column="0" Grid.Row="3" Content="Car type:" Margin="10,35,10,9"/>
             <Label x:Name="CarTypeErrLabel" Content="Label" Grid.Row="3" Grid.Column="1" FontSize="11" Margin="10,10,10,33"/>
-            <TextBox x:Name="CarTypeTextBox" Grid.Column="1" Grid.Row="3" Margin="10,35,10,9" TextChanged="CarTypeTextBox_TextChanged"/>
+            <TextBox Background="AliceBlue" x:Name="CarTypeTextBox" Grid.Column="1" Grid.Row="3" Margin="10,35,10,9" TextChanged="CarTypeTextBox_TextChanged"/>
 
-            <Label Grid.Column="0" Grid.Row="4" Content="License plate" Margin="10"/>
+            <Label Background="LightGray" FontWeight="Bold" Grid.Column="0" Grid.Row="4" Content="License plate:" Margin="10,35,10,10"/>
             <Label x:Name="LicensePlateErrLabel" Content="Label" Grid.Row="4" Grid.Column="1" FontSize="11" Margin="10,10,10,34"/>
-            <TextBox x:Name="LicensePlateTextBox" Grid.Column="1" Grid.Row="4" Margin="10,35,10,10" TextChanged="LicensePlateTextBox_TextChanged"/>
+            <TextBox Background="AliceBlue" x:Name="LicensePlateTextBox" Grid.Column="1" Grid.Row="4" Margin="10,35,10,10" TextChanged="LicensePlateTextBox_TextChanged"/>
 
-            <Label Grid.Column="0" Grid.Row="5" Content="Description" Margin="10,6,10,34"/>
+            <Label Background="LightGray" FontWeight="Bold" Grid.Column="0" Grid.Row="5" Content="Description:" Margin="10,31,10,74"/>
             <Label x:Name="DescriptionErrLabel" Content="Label" Grid.Row="5" Grid.Column="1" FontSize="11" Margin="10,6,10,98"/>
-            <TextBox x:Name="DescriptionTextBox" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="5" Margin="10,31,10,34"/>
+            <TextBox Background="AliceBlue" x:Name="DescriptionTextBox" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="5" Margin="10,31,10,34"/>
         </Grid>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top" Height="40" Margin="10,454,10,0">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top" Height="45" Margin="10,494,10,0">
             <Button x:Name="CreateButton" Content="Create" Width="80" Margin="10" Click="CreateButtonClick"/>
             <Button x:Name="UpdateButton" Content="Update" Width="80" Margin="10" Click="UpdateButtonClick"/>
             <Button x:Name="DeleteButton" Content="Delete" Width="80" Margin="10" Click="DeleteButtonClick"/>
